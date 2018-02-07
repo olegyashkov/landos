@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<title>landos</title>
 	<meta charset="UTF-8">
@@ -16,15 +16,15 @@
 		<span class="close"><img src="img/close-button.svg" alt=""></span>
 		<h2>заказать консультацию</h2>
 		<p>заполните форму заявки и мы вам перезвоним</p>
-		<form action="" class="modal__form" method="">
-			<input type="name" name="name" class="modal__input modal__input--name" placeholder="Имя">
+		<form action=".php" class="modal__form" method="post">
+			<input type="text" name="name" class="modal__input modal__input--name" placeholder="Имя">
 			<input type="text" name="site" class="modal__input modal__input--site" placeholder="Сайт">
 			<input type="tel" name="modal_phone" class="modal__input modal__input--phone" placeholder="Телефон">
 			<input type="email" name="email" class="modal__input modal__input--mail" placeholder="Email">
 			<textarea name="message" class="modal__input modal__input--message" placeholder="Сообщение"></textarea>
 			<input type="checkbox" id="mdl__checked" class="modal__checkbox">
 			<label for="mdl__checked" class="modal__label">Заполняя данную форму, Вы соглащайтесь с  уловиями Конфидециальности</label>
-			<input type="submit" name="send_me" placeholder="отправить" disabled="disabled" class="form__btn form__btn--white">
+			<button type="submit" name="send_me" disabled="disabled" class="form__btn form__btn--white">отправить</button>
 
 		</form>
 		</div>
@@ -184,11 +184,11 @@
 				<p>Текст о том что Вас ждет и так дальшеТекст о том что Вас ждет и так дальшеТекст о том что Вас ждет и так дальшеТекст о том что Вас ждет и так дальше</p>
 			</div>
 			<form action=".php" method="post" class="form">
-				<input type="name" name="name" placeholder="Имя" class="form__input form__input--name">
+				<input type="text" name="name" placeholder="Имя" class="form__input form__input--name">
 				<input type="tel" name="phone" placeholder="Телефон" class="form__input form__input--phone">
 				<input type="checkbox" name="agree" class="form__checkbox" id="checked">
 				<label for="checked" class="form__label">Согласие на обработку данных</label>
-				<input type="submit" name="send_me" placeholder="отправить" disabled="disabled" class="form__btn">
+				<button type="submit" name="send_me" disabled="disabled" class="form__btn">отправить</button>
 			</form>
 		</div>
 	</section>
@@ -204,7 +204,7 @@
 			<span class="close"><img src="img/close-button.svg" alt=""></span>
 			<h2>Спасибо!</h2>
 			<p>в ближайшее время мы вам перезвоним</p>
-			<input type="submit" name="close" placeholder="закрыть" class="feedback__btn">
+			<button type="submit" name="close" class="feedback__btn">закрыть</button>
 		</div>
 	</div>
 	<svg style ="display: none" width="115px" height="99px" viewBox="0 0 115 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

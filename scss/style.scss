@@ -734,10 +734,14 @@ html,body{
 		background-color: lightgray;
 	}
 	&__label{
-		// width: 100px;
+		width: 150px;
 		display: inline-block;
 		margin-left: 50px;
 		position: relative;
+		@media screen and (max-width: 414px ) {
+			width: auto;
+		}
+
 	}
 	&__label:after{
 		content: '';

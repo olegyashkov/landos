@@ -596,9 +596,13 @@ html, body {
   .form__btn:disabled {
     background-color: lightgray; }
   .form__label {
+    width: 150px;
     display: inline-block;
     margin-left: 50px;
     position: relative; }
+    @media screen and (max-width: 414px) {
+      .form__label {
+        width: auto; } }
   .form__label:after {
     content: '';
     width: 20px;
