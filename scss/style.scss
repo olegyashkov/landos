@@ -161,7 +161,7 @@ html,body{
 .section{
 	&--header{
 		background:linear-gradient(173deg, #77aad5 0%, #77aad5 77%, rgba(255, 255, 255, 0) 77.1%, rgba(255, 255, 255, 0) 100%);
-		padding-bottom: 200px;
+		padding-bottom: 220px;
 		padding-top: 150px;
 		 @media screen and (max-width: 640px ) {
 			padding-top: 50px;
@@ -607,7 +607,7 @@ html,body{
 		}	
 		& div{
 			position: absolute;
-			top:-60%; right: -7%;
+			top:-60%; right: 0;
 			max-width: 252px;
 			border-radius: 50%;
 			border: 3px solid lightgray;
