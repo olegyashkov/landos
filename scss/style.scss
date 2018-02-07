@@ -21,7 +21,7 @@ html,body{
 	display: none;
     position: fixed; 
     z-index: 1; 
-    padding-top: 100px; 
+    padding-top: 10px; 
     left: 0;
     top: 0;
     width: 100%;
@@ -34,6 +34,7 @@ html,body{
     	margin: 0 auto;
     	padding: 30px;
     	border: 1px solid #888;
+    	border-radius: 10px;
     	width: 80%;;
     	margin: auto;
     	padding: 20px;
@@ -46,6 +47,15 @@ html,body{
     		font-weight: normal;
     		text-align: center;
     		color:#fff;
+    		@media screen and (max-width: 940px ) {
+    			font-size: 42px;
+    		}
+    		@media screen and (max-width: 1024px ) {
+    			font-size: 36px;
+			
+			}
+			
+		
     	}
     	& p{
     		text-align: center;
@@ -53,9 +63,35 @@ html,body{
 
 
     }
+
     &__form{
     	width: 100%;
     	// margin: 0 auto;
+    }
+    &__checkbox{
+    	display: none;
+    }
+    &__label{
+    	position: relative;
+    	margin-left: 50px;
+    	display: inline-block;
+    }
+    &__label:after{
+	
+  		content: '';
+    	height: 30px;
+    	width: 30px;
+    	border-radius: 50%;
+    	border: 1px solid #fff;
+    	position: absolute;
+    	top: -10px;
+    	left: -50px;
+    }
+    &__checkbox:checked + &__label:after{
+    	background-image: url(../img/tick.svg);
+    	background-size: 25px;
+    	background-position: 5px;
+   		background-repeat: no-repeat;
     }
     &__input{
     	width: 40%;
@@ -63,13 +99,29 @@ html,body{
     	border:none;
     	margin-bottom: 20px;
     	padding: 20px;
+    	color:#333333;
+    	@media screen and (max-width: 768px ) {
+			width: 90%;
+			padding: 10px;
+			// display: block;
+			// margin: 10px auto;
+		}
     	&--name,
     	&--phone{
 			margin-right: 35px;
+			@media screen and (max-width: 1024px ) {
+			margin-right: 15px;
+			@media screen and (max-width: 852px ) {
+			margin-right: 5px;
+		}
+		}
+
     	}
     	&--message{
     		width: 92%;
+    		height: 100px;
     		border-radius: 10px;
+    		display: block;
     	}
     }
 
@@ -91,6 +143,16 @@ html,body{
 	display: flex;
 	margin: auto;
 	justify-content:space-between;
+	@media screen and (max-width: 1040px ) {
+		width: 90%;
+	}
+	@media screen and (max-width: 920px ) {
+		width: 96%;
+	}
+	@media screen and (max-width: 562px ) {
+		flex-wrap:wrap;
+	}
+
 	&--column{
 		flex-direction:column;
 	}
@@ -101,22 +163,53 @@ html,body{
 		background:linear-gradient(173deg, #77aad5 0%, #77aad5 77%, rgba(255, 255, 255, 0) 77.1%, rgba(255, 255, 255, 0) 100%);
 		padding-bottom: 200px;
 		padding-top: 150px;
+		 @media screen and (max-width: 640px ) {
+			padding-top: 50px;
+		}	
 	}
 	&--case{
 		padding-top: 150px;
+		 @media screen and (max-width: 562px ) {
+		 	padding-top: 20px;
+		 }
+		 @media screen and (max-width: 414px ) {
+		 	margin-bottom: -150px;
+		 }
 	}
 	&--result{
 		background: linear-gradient(173deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 15%, #77aad5 15.1%, #77aad5 85%, rgba(255, 255, 255, 0) 85.1%, rgba(255, 255, 255, 0) 100%);
 		padding-top: 150px;
 		padding-bottom: 150px;
+		 @media screen and (max-width: 768px ) {
+			padding-top: 200px;
+		}
+		 @media screen and (max-width: 640px ) {
+			padding-top: 250px;	
+		}
+		@media screen and (max-width: 414px ) {
+			padding-bottom: 200px;
+		}		
+	}
+	&--questions{
+		margin-top: -150px;
+		@media screen and (max-width: 414px ) {
+			margin-bottom: -50px;
+		}
 	}
 	&--slide{
 		background: linear-gradient(173deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 15%, #77aad5 15.1%, #77aad5 85%, rgba(255, 255, 255, 0) 85.1%, rgba(255, 255, 255, 0) 100%);
 		padding-top: 150px;
 		padding-bottom: 150px;
+		@media screen and (max-width: 414px ) {
+			padding-bottom: 170px;
+		}
+
 	}
 	&--form{
 		padding-bottom: 100px;
+		@media screen and (max-width: 414px ) {
+			margin-top: -100px;
+		}
 	}
 	&__title{
 		text-align: center;
@@ -135,16 +228,23 @@ html,body{
 		font-size: 30px;
 		font-weight: 300;
 		padding-bottom: 50px;
+		@media screen and (max-width: 414px ) {
+			padding-bottom: 0;
+		}
 		&--black{
 			color:#333333;
 		}
 	}
 
 	&__image{
-		width: 40%;
+		// width: 40%;
+		width: 475px;
 		& img{
 			width: 100%;
 		}
+		 @media screen and (max-width: 562px ) {
+		 	display: none;
+		 }
 		&--abs{
 			position: relative;
 			& img{
@@ -175,6 +275,10 @@ html,body{
 		text-transform: uppercase;
 		font-weight: bold;
 		align-self:center;
+		@media screen and (max-width: 768px ) {
+			flex-basis:25%;
+			flex-grow:1;
+		}
 	}
 	&__title p{
 		font-family: 'Raleway', sans-serif;
@@ -182,16 +286,54 @@ html,body{
 		font-size: 19px;
 		font-weight:normal;
 		text-align: center;
+		@media screen and (max-width: 768px ) {
+			flex-basis:45%;
+			flex-grow:2;
+		}
+		 @media screen and (max-width: 736px ) {
+			flex-basis:40%;
+			font-size: 16px;
+		}
+		 @media screen and (max-width: 640px ) {
+			flex-basis:35%;
+			flex-grow:1;
+		}
+		 @media screen and (max-width: 590px ) {
+			font-size: 14px;
+		 }
+		 @media screen and (max-width: 564px ) {
+		 	display: none;
+		 }
+
 	}
 	&__tel{
 		text-align: right;
 		align-self:center;
-		font-family:'lucida_grandebold';;
+		font-family:'lucida_grandebold';
+		font-size: 16px;
+		@media screen and (max-width: 768px ) {
+			flex-basis:30%;
+			flex-grow:1;
+		}
+		 @media screen and (max-width: 736px ) {
+				flex-basis:35%;
+				font-size: 14px;
+		}
+		 @media screen and (max-width: 640px ) {
+				flex-basis:40%;
+				
+
+
+		}		
 	}
 }
 .info{
 	width: 60%;
 	font-family:'Raleway', sans-serif;
+	 @media screen and (max-width: 562px ) {
+		 width: 90%;
+		 margin:0 auto;	
+	}
 	& span{
 		font-size: 24px;
 		color:#fff;
@@ -199,6 +341,12 @@ html,body{
 	&__title{
 		font-size: 45px;
 		color:#ffe100;
+		@media screen and (max-width: 920px ) {
+			font-size: 38px;
+		}
+		 @media screen and (max-width: 640px ) {
+			font-size: 32px;
+		}	
 	}
 	&__text{
 		font-family: 'Raleway', sans-serif;
@@ -206,11 +354,18 @@ html,body{
 		font-weight: 400;
 		color:#333333;
 		margin-top: 0;
+		@media screen and (max-width: 768px ) {
+			font-size: 20px;
+		}
+
 		
 		&--light{
 			font-size: 20px;
 			font-weight: 300;
 			opacity: 0.8;
+			@media screen and (max-width: 768px ) {
+			font-size: 18px;
+		}
 		}
 		&--white{
 			font-size: 20px;
@@ -218,32 +373,56 @@ html,body{
 			opacity: 0.8;
 		}
 	}
-	// &__icon{
-		// position: relative;
-		// & span{
-			// display: block;
-			// position: absolute;
-			// top: -120px;
-		// }
-	// }
+	 &__icon{
+	@media screen and (max-width: 1024px ) {
+		 position: relative;
+		 & span{
+			 display: block;
+			 position: absolute;
+			 top: -120px;
+			  @media screen and (max-width: 562px ) {
+		 		right: 50px;
+		 }
+			
+		 }
+		  
+	
+}
+}
 	
 		
 	&--top{
 		width: 50%;
 		font-family: 'Raleway', sans-serif;
+		color:#333333;
+		@media screen and (max-width: 414px ) {
+			width: 90%;
+			margin: auto;
+		}
 		& h3{
 			font-size: 30px;
+			@media screen and (max-width: 736px ) {
+				font-size: 26px;
+			}
 
 		}
 		& p{
 			font-size: 20px;
 			font-weight: 200; 
+			@media screen and (max-width: 736px ) {
+				font-size: 18px;
+			}
 		}
 	}
 
 }
 .item{
 	width: 33%;
+	padding-bottom: 50px;
+	 @media screen and (max-width: 620px ) {
+		width: 80%;
+		margin: auto; 	
+	}
 
 	&__img{
 		display: block;
@@ -265,9 +444,15 @@ html,body{
 	color:#fff;
 	width: 65%;
 	margin: auto;
+	 @media screen and (max-width: 680px ) {
+		width: 90%; 	
+	}
 	& li{
 		position: relative;
 		padding-bottom: 75px;
+		 @media screen and (max-width: 680px ) {
+		 	padding-bottom: 30px;
+		 }
 		
 	}
 	& li:before,
@@ -285,6 +470,14 @@ html,body{
 		border-radius: 50%;
 		position: absolute;
 		left: -180px;
+		@media screen and (max-width: 1024px ) {
+			width: 120px;
+			height: 120px;
+			left: -140px;
+		}
+		 @media screen and (max-width: 680px ) {
+		 	content: none;
+		 }
 	}
 	& li:nth-of-type(even):after{
 		content: '';
@@ -295,6 +488,14 @@ html,body{
 		border-radius: 50%;
 		position: absolute;
 		right: -150px;top: -10px;
+		@media screen and (max-width: 1024px ) {
+			width: 120px;
+			height: 120px;
+			right: -100px;
+		}
+		 @media screen and (max-width: 680px ) {
+		 	content: none;
+		 }
 	}
 	& li:first-of-type:before{
 		background-image: url(../img/search.svg);
@@ -316,7 +517,10 @@ html,body{
     	width: 100px;
     	height: calc(100% - 120px);
     	border-left: 4px solid #ffe100;
-   	 	border-bottom: 4px solid #ffe100;	
+   	 	border-bottom: 4px solid #ffe100;
+   	 	 @media screen and (max-width: 768px ) {
+				content: none;
+			}	
 		}
 		&--after:after {
 		position: absolute;
@@ -328,46 +532,96 @@ html,body{
     	height: calc(100% - 110px);
     	border-right: 4px solid #ffe100;
    	 	border-bottom: 4px solid #ffe100;
+   	 	 @media screen and (max-width: 768px ) {
+				content: none;
+			}	
    	}
 }
 	
 
 
 	& span{
-		padding-right: 20px;
+		padding-right: 2%;
 		font-size: 48px;
 		color:#ffe100;
+		@media screen and (max-width: 736px ) {
+			// font-size: 32px;
+			width: 18%;
+		}
 
 	}
 	& h3{
 		display: inline-block;
+		@media screen and (max-width: 736px ) {
+			width: 80%;
+		}
 	}
 }
 
 .question{
 	display: flex;
+	font-family:'Raleway', sans-serif;
+
 	& span{
 		padding-right: 50px;
 		align-self:center;
+		width: 98px;
+		@media screen and (max-width: 414px ) {
+			padding-right: 20px;
+		}
+		& img{
+			width: 98px;
+			@media screen and (max-width: 736px ) {
+				width: 58px;
+			}
+
+		}
+	}
+	& h4{
+		font-size: 20px;
+	}
+	& p{
+		font-size: 15px;
+		font-weight: 200;
 	}
 }
 .slider{
-	padding-top: 150px;
 	padding-bottom: 50px;
+	width: 50%;
+	margin: 0 auto;
+	@media screen and (max-width: 692px ) {
+		width: 65%;
+	}
+	@media screen and (max-width: 525px ) {
+		width: 75%;
+	}
+
 
 	&__img{
 		position: relative;
 		height: 200px;
-		& img{
+	
+		
+		 @media screen and (max-width: 768px ) {
+			height: 130px;
+		}	
+		& div{
 			position: absolute;
-			top:-60%;
+			top:-60%; right: -7%;
+			max-width: 252px;
+			border-radius: 50%;
+			border: 3px solid lightgray;
+
+			& img{
+				width: 100%;
+			}
+
 		}
 	}
 	&__item{
+		margin-top: 120px;
 		border-radius: 10px;
 		padding-bottom: 20px;
-		// padding-top: 200px;
-		margin:0 auto;
 		background-color: #fff;
 		width: 50%;
 		& h5{
@@ -376,11 +630,12 @@ html,body{
 		& p{
 			padding-right: 20px;
 			padding-left: 20px;
+			line-height: 1.5;
 		}
 
 	}
 	&__img{
-		width: 40%;
+		width: 50%;
 		margin: 0 auto;
 		
 	}
@@ -388,6 +643,13 @@ html,body{
 
 .form{
 	width: 50%;
+	 @media screen and (max-width: 768px ) {
+		padding-top: 30px;
+	}
+	@media screen and (max-width: 414px ) {	
+		width: 90%;
+		margin: auto;
+	}
 	&__input{
 		 display: block;
    		 width: 80%;
@@ -402,6 +664,7 @@ html,body{
 	}
 	&__checkbox{
 		margin-left: 40px;
+		display: none;
 	}
 	&__checkbox:checked{
 		background-color: red;
@@ -411,19 +674,109 @@ html,body{
 		border:none;
 		padding: 15px 34px;
 		border-radius: 100px;
+		color:#77aad5;
+		 @media screen and (max-width: 800px ) {
+			display: block;
+			margin: 0 auto;
+			margin-top: 20px;
+		}	
 		&--white{
 			display: block;
 			margin: 0 auto;
+			background-color:#fff;
+			margin-top: 10px;
+			
 		}
+		&--white:disabled{
+			background-color: lightgray;
+		}
+
 	}
 	&__btn:disabled{
 		background-color: lightgray;
 	}
 	&__label{
-		width: 100px;
+		// width: 100px;
+		display: inline-block;
+		margin-left: 50px;
+		position: relative;
+	}
+	&__label:after{
+		content: '';
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		border-radius: 50%;
+		border:2px solid lightgray;
+		position: absolute;
+		left: -40px; top: -5px;
+	}
+	&__checkbox:checked + &__label:after{
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		border-radius: 50%;
+		background-color: red;
 	}
 }
 .footer{
 	background-color: #77aad5;
+
+}
+
+.feedback{
+	display: none;
+    position: fixed; 
+    z-index: 10; 
+    padding-top: 10px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.6); 
+    &__content{
+    	background-color:#77aad5;
+    	padding: 20px;
+    	border: 1px solid #888;
+    	border-radius: 10px;
+    	width: 300px;
+    	margin: auto;
+    	border: 1px solid #888;
+    	color:#fff;
+    }
+    & h2{
+    		font-family: 'Raleway', sans-serif;
+    		font-size: 48px;
+    		font-weight: normal;
+    		text-align: center;
+    		color:#fff;
+    	}
+    	& p{
+    		text-align: center;
+    	}
+    	 .close{
+    	float: right;
+    	width: 40px;
+    	& img{
+			width: 100%;
+    	}
+   	 }
+    .close:hover,
+	.close:focus {
+    cursor: pointer;
+	}
+	&__btn{
+		border:none;
+		padding: 15px 34px;
+		border-radius: 100px;
+		color:#77aad5;
+		display: block;
+		margin: 0 auto;
+		background-color:#fff;
+		margin-top: 10px;
+	}
+
 
 }

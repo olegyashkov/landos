@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,14 +16,14 @@
 		<span class="close"><img src="img/close-button.svg" alt=""></span>
 		<h2>заказать консультацию</h2>
 		<p>заполните форму заявки и мы вам перезвоним</p>
-		<form action=".php" class="modal__form">
+		<form action="" class="modal__form" method="">
 			<input type="name" name="name" class="modal__input modal__input--name" placeholder="Имя">
 			<input type="text" name="site" class="modal__input modal__input--site" placeholder="Сайт">
 			<input type="tel" name="modal_phone" class="modal__input modal__input--phone" placeholder="Телефон">
 			<input type="email" name="email" class="modal__input modal__input--mail" placeholder="Email">
-			<input type="textarea" name="message" class="modal__input modal__input--message" placeholder="Сообщение">
-			<input type="checkbox" id="mdl__checked">
-			<label for="mdl__checked">Заполняя данную форму, Вы соглащайтесь с  уловиями Конфидециальности</label>
+			<textarea name="message" class="modal__input modal__input--message" placeholder="Сообщение"></textarea>
+			<input type="checkbox" id="mdl__checked" class="modal__checkbox">
+			<label for="mdl__checked" class="modal__label">Заполняя данную форму, Вы соглащайтесь с  уловиями Конфидециальности</label>
 			<input type="submit" name="send_me" placeholder="отправить" disabled="disabled" class="form__btn form__btn--white">
 
 		</form>
@@ -120,7 +122,7 @@
 		</ul>
 		</div>
 	</section>
-	<section class="section">
+	<section class="section section--questions">
 		<div class="container container--column">
 			<h2 class="section__title section__title--black">часто задаваемые вопросы</h2>
 			<p class="section__subtitle section__subtitle--black">Мы подготовили для Вас ответы на самые популярные вопросы</p>
@@ -161,8 +163,13 @@
 			<p class="section__subtitle">Наша работа приносит результат, о чем говорят наши клиенты</p>
 			<div class="slider">
 				<div class="slider__item">
-					<div class="slider__img"><img src="img/Bitmap.png" alt=""></div>
+					<div class="slider__img"><div><img src="img/Bitmap.png" alt=""></div></div>
 					<h5>Василий Пупкин</h5>
+					<p>Nam elit arcu, malesuada id ornare nec, pellentesque ut augue. Praesent sit amet nunc ut libero feugiat luctus bibendum sollicitudin ligula. Donec vulputate turpis ante, id euismod sem posuere ut. Fusce fringilla justo. </p>
+				</div>
+				<div class="slider__item">
+					<div class="slider__img"><div><img src="img/Bitmap.png" alt=""></div></div>
+					<h5>Герасим Будкин</h5>
 					<p>Nam elit arcu, malesuada id ornare nec, pellentesque ut augue. Praesent sit amet nunc ut libero feugiat luctus bibendum sollicitudin ligula. Donec vulputate turpis ante, id euismod sem posuere ut. Fusce fringilla justo. </p>
 				</div>
 			</div>
@@ -192,6 +199,14 @@
 			<div class="header__tel">+7 (499) 110-80-10</div>
 		</div>
 	</footer>
+	<div class="feedback">
+		<div class="feedback__content">
+			<span class="close"><img src="img/close-button.svg" alt=""></span>
+			<h2>Спасибо!</h2>
+			<p>в ближайшее время мы вам перезвоним</p>
+			<input type="submit" name="close" placeholder="закрыть" class="feedback__btn">
+		</div>
+	</div>
 	<svg style ="display: none" width="115px" height="99px" viewBox="0 0 115 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
     <symbol viewBox="0 0 115 99" id = "case1">
@@ -272,6 +287,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
    crossorigin="anonymous"></script>
+   <script src="js/slick.min.js"></script>
 	<script src="js/script.js"></script>
 
 </body>
