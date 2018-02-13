@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,400,500");
-* {
-  transition: all .5s linear; }
-
 @font-face {
   font-family: 'lucida_grandebold';
   src: url("../fonts/8292-webfont.woff") format("woff");
@@ -254,7 +251,8 @@ html, body {
     margin-top: 30px;
     font-size: 24px;
     font-weight: 400;
-    opacity: 0.7; }
+    opacity: 0.7;
+    transition: all .5s linear; }
     .section__btn:hover, .section__btn:focus {
       opacity: 1; }
     @media screen and (max-width: 768px) {
@@ -685,7 +683,8 @@ html, body {
     padding: 15px 70px;
     border-radius: 100px;
     color: #fff;
-    font-size: 20px; }
+    font-size: 20px;
+    transition: all .5s linear; }
     @media screen and (max-width: 800px) {
       .form__btn {
         display: block;
@@ -763,12 +762,18 @@ html, body {
     margin: auto;
     border: 1px solid #888;
     color: #fff; }
+    @media screen and (max-width: 320px) {
+      .feedback__content {
+        width: 250px; } }
   .feedback h2 {
     font-family: 'Raleway', sans-serif;
     font-size: 48px;
     font-weight: normal;
     text-align: center;
     color: #fff; }
+    @media screen and (max-width: 320px) {
+      .feedback h2 {
+        font-size: 40px; } }
   .feedback p {
     text-align: center; }
   .feedback .close {
