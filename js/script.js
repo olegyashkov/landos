@@ -40,16 +40,19 @@
 
     })
 
-    $('.form__btn').on('click', function(e){
+    $('.send').on('click', function(e){
         e.preventDefault();
         $('.feedback').fadeIn("slow").css('display' , 'flex');
     })
     $('.close').on('click' , function(){
         $('.feedback').fadeOut("slow").css('display' , 'none');
+        $('.form__btn').attr('disabled',true);
+        
 
     })
     $('.feedback__btn').on('click' ,function(){
         $('.feedback').fadeOut("slow").css('display' , 'none');
+
     })
 
     $('#mdl__checked').on("change", function() {
